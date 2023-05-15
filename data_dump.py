@@ -1,6 +1,3 @@
-# ML_Project5_Insurance_Prediction
-## Insert Data into MongoDB
-```
 import pymongo 
 import pandas as pd
 import json
@@ -25,4 +22,4 @@ if __name__ == "__main__":
 
     client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
 
-```
+
