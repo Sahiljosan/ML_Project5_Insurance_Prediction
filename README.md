@@ -39,3 +39,6 @@ In order to read data from mongoDB, we will define our client in mongoDB from wh
 `step5` install all libraries using pip install -r requirements.txt
 `step6` Run python main.py file <br>
 After this all data will be ingested from mongoDB server
+`Step7` Create 2 folders in Insurance_Prediction/entity : artifact_enity.py and config_entity.py <br>
+Now we will write code in config.py file
+`step7` Now we will make one folder of **data_set** name, where we will split data into train data and split data
