@@ -56,8 +56,10 @@ class DataIngestion: # in dataingestion we divide the data, train, test and vali
             data_ingestion_artifact = artifact_entity.DataIngestionArtifact(
                 feature_store_file_path = self.data_ingestion_config.feature_store_file_path,
                 train_file_path = self.data_ingestion_config.train_file_path,
-                test_file_path = self.data_ingestion_config.test_file_path
-            )
+                test_file_path = self.data_ingestion_config.test_file_path)
+            
+            logging.info(f"Data Ingestion Artifact :{data_ingestion_artifact}")
+            return data_ingestion_artifact
 
         except Exception as e:
             raise InsuranceException(error_message=e,error_detail=sys)
