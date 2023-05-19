@@ -82,4 +82,19 @@ Now we will write code in config.py file
 `step1` Create file data_ingestion.py in Insurance_Prediction/components folder <br>
 Write code in data_ingestion.py file
 `step2` change code in the main.py file <br>
-After running python main.py we will get artifact folder, which includes train and test dataset and insurance.csv dataset
+After running python main.py we will get artifact folder, which includes train and test dataset and insurance.csv dataset<br>
+`step3` Create folder Data Validation in Insurance_Prediction/components <br>
+In data validation we :
+- Check Data Type
+- Find the unwanted data 
+- Data Cleaning
+<br>
+Open Insurance_Prediction\entity\config_entity.py file and write code for data_validation<br>
+Now go to Insurance_Prediction\entity\artifact_entity.py and define data_validation artifact <br>
+Now again go data_validation.py file and write code upto line 111 <br>
+
+`step4` Go to utils.py and define our convert_columns_float, write code from line 28 - 37
+`step5` Again go to data_validation.py and write code from 114 - 128
+`step6` Go to utils.py and define function write_yaml_file 
+`step7` in data_validation.py write code from 129 - 136
+`step8` in main.py write code from 38 - 44

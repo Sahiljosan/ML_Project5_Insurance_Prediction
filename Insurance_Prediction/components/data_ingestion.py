@@ -12,7 +12,7 @@ from Insurance_Prediction.entity import artifact_entity
 from sklearn.model_selection import train_test_split
 
 
-class DataIngestion: # in dataingestion we divide the data, train, test and validate the data
+class DataIngestion: # in data_ingestion we divide the data, train, test and validate the data
     def __init__(self,data_ingestion_config : config_entity.DataIngestionConfig):
         try:
             self.data_ingestion_config = data_ingestion_config
