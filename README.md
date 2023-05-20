@@ -2,8 +2,8 @@
 - [Insert Data into MongoDB](#insert-data-into-mongodb)
 - [Get data from MongoDB](#get-data-from-mongodb)
 - [Day 3](#day-3)
-- [Day 4](#day-4)
-- []
+- [Day 4 Data_ingestion and Data_Validation](#day-4)
+- [Day 5 Data_transformation](#day-5-data_transformation)
 
 ## Insert Data into MongoDB
 ```
@@ -78,7 +78,7 @@ After this all data will be ingested from mongoDB server
 Now we will write code in config.py file
 `step7` Now we will make one folder of **data_set** name, where we will split data into train data and split data
 
-## Day 4
+## Day 4 
 `step1` Create file data_ingestion.py in Insurance_Prediction/components folder <br>
 Write code in data_ingestion.py file
 `step2` change code in the main.py file <br>
@@ -98,3 +98,25 @@ Now again go data_validation.py file and write code upto line 111 <br>
 `step6` Go to utils.py and define function write_yaml_file 
 `step7` in data_validation.py write code from 129 - 136
 `step8` in main.py write code from 38 - 44
+
+## Day 5 Data_Transformation
+Here we will
+- Handle Missing Values
+- Handle Outliers
+- Handle Inbalance Data 
+- Convert categorical data into numerical data
+- Based on this data we will train our model (Model_Building)
+`step1` Go to Insurance_Prediction/entity/config_entity.py and write code from line 53 - 60
+`step2` In artifacts_entity.py make class DataTransformationArtifacts
+`step3` go to data_transformation.py and write code from DataTransformation class and get_data_transformer_object function and initiate_data_transformation function
+`step4` go to utils.py and define save_object function , load_object function and save_numpy_array_data function
+`step5` go to data_transformation.py and write code from 104 to 116 data_transformation_artifact
+`step6` go to main.py and write code for data_transformation <br>
+After This we get error like `expected str, bytes or os.PathLike object, not TrainingPipelineConfig`, so to remove this error <br>
+- go to utils and define save_numpy_array_data function
+- go to data_transformation.py and write code from 107 - 118 
+- go to config_entity.py and write code in line 63
+
+
+
+
