@@ -90,5 +90,18 @@ def save_numpy_array_data(file_path:str,array:np.array):
 
     except Exception as e:
         raise InsuranceException(e,sys)
+    
+
+# Load Data in model Trainer file
+
+def load_numpy_array_data(file_path:str)->np.array: # this function will return data in np.array formate
+    try:
+        with open(file_path,"rb") as file_obj:
+            return np.load(file_obj)
+
+
+    except Exception as e:
+        raise InsuranceException(e,sys)
+
 
 

@@ -93,12 +93,12 @@ Open Insurance_Prediction\entity\config_entity.py file and write code for data_v
 Now go to Insurance_Prediction\entity\artifact_entity.py and define data_validation artifact <br>
 Now again go data_validation.py file and write code upto line 111 <br>
 
-`step4` Go to utils.py and define our convert_columns_float, write code from line 28 - 37
-`step5` Again go to data_validation.py and write code from 114 - 128
-`step6` Go to utils.py and define function write_yaml_file 
-`step7` in data_validation.py write code from 129 - 136
+`step4` Go to utils.py and define our convert_columns_float, write code from line 28 - 37<br>
+`step5` Again go to data_validation.py and write code from 114 - 128<br>
+`step6` Go to utils.py and define function write_yaml_file <br>
+`step7` in data_validation.py write code from 129 - 136<br>
 `step8` in main.py write code from 38 - 44
-
+<br>
 ## Day 5 Data_Transformation
 Here we will
 - Handle Missing Values
@@ -106,16 +106,49 @@ Here we will
 - Handle Inbalance Data 
 - Convert categorical data into numerical data
 - Based on this data we will train our model (Model_Building)
-`step1` Go to Insurance_Prediction/entity/config_entity.py and write code from line 53 - 60
-`step2` In artifacts_entity.py make class DataTransformationArtifacts
-`step3` go to data_transformation.py and write code from DataTransformation class and get_data_transformer_object function and initiate_data_transformation function
-`step4` go to utils.py and define save_object function , load_object function and save_numpy_array_data function
-`step5` go to data_transformation.py and write code from 104 to 116 data_transformation_artifact
+
+`step1` Go to Insurance_Prediction/entity/config_entity.py and write code from line 53 - 60<br>
+`step2` In artifacts_entity.py make class DataTransformationArtifacts<br>
+`step3` go to data_transformation.py and write code from DataTransformation class and get_data_transformer_object function and initiate_data_transformation function<br>
+`step4` go to utils.py and define save_object function , load_object function and save_numpy_array_data function<br>
+`step5` go to data_transformation.py and write code from 104 to 116 data_transformation_artifact<br>
 `step6` go to main.py and write code for data_transformation <br>
 After This we get error like `expected str, bytes or os.PathLike object, not TrainingPipelineConfig`, so to remove this error <br>
 - go to utils and define save_numpy_array_data function
 - go to data_transformation.py and write code from 107 - 118 
 - go to config_entity.py and write code in line 63
+
+## Day 6 Model_Training and Model_Validation
+**ModelTrainer**
+`step1` go to entity/config_entity.py and define ModelTrainingConfig class <br>
+`step2` go to entity/artifact_entity.py and define ModelTrainerArtifact class <br>
+`step3` go to model_trainer.py and write code for ModelTrainer class and define train_model and initiate_model_trainer <br>
+`step4` go to utils.py file and write code to **Load Data in model Trainer file** <br>
+`step5` go to model_trainer.py and write code function **initiate_model_trainer** <br>
+`step6` go to main.py and write code for model trainer <br>
+
+Mow we have created 1st pipeline where we have data_ingestion, data_transformation,data_validation and model_trainer and we can deply the model. <br>
+Right now we are saving all things in artifact folder <br>
+But after model deployment, next time when we get the data ,we will again run the pipeline so we have to write code so that when the new data come it will synchronize with the older one <br>
+In **predictor.py** we will create new class **ModelResolver**, so when we run new pipeline with new data then this class will create a new folder <br>
+After Creating folder this class will save the new model <br>
+we cannot save the new model with the previous one .. because if we do so, then how can we compare new model with the previous one <br>
+So we will compare our new model with the older one and after comparing if we get the better accuracy then old model.<br>
+then we will accept this new model else reject this new model<br>
+
+**Model Validation**
+`step1` go to Insurance_Prediction/predictor.py and define class ModelTrainer 
+and define all functions <br>
+`step2` go to artifact_entity.py and define class ModelEvaluationArtifact <br>
+`step3` go to config_entity.py file and define **ModelEvaluationConfig** class <br>
+`step4` create model_evaluation.py file and define class ModelEvaluation in it , write code for constructor and define intiate_model_evaluation function<br>
+`step5` go to main.py and write code for Model Evaluation
+`step6` Now our folder is created "saved_models" but it will be empty
+
+
+
+
+
 
 
 
