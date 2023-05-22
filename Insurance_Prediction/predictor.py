@@ -106,7 +106,7 @@ class ModelResolver:
                 return os.path.join(self.model_registry, f"{0}")
             
             latest_dir_num = int(os.path.basename(self.get_latest_dir_path()))
-            return os.path.join(self.model_registry, f"{latest_dir_num+1}") # add +1 so that it will increase everytime
+            return os.path.join(self.model_registry, f"{latest_dir_num + 1}") # add +1 so that it will increase everytime
 
         except Exception as e:
             raise InsuranceException(e,sys)

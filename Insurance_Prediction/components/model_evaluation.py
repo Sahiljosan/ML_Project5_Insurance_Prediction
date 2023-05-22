@@ -25,6 +25,7 @@ class ModelEvaluation:
                  model_trainer_artifact : artifact_entity.ModelTrainerArtifact):
         
         try:
+            logging.info(f"{'>>'*20} Model Evaluation {'<<'*20}")
             self.model_eval_config = model_eval_config
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_transformation_artifact = data_transformation_artifact
@@ -37,6 +38,9 @@ class ModelEvaluation:
 
     def intiate_model_evaluation(self)->artifact_entity.ModelEvaluationArtifact:
         try:
+            logging.info("if saved model folder has model the we will compare"
+                         "Which model is best trained or the model from saved model folder")
+
             latest_dir_path = self.model_resolver.get_latest_dir_path()
 
             if latest_dir_path == None:

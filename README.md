@@ -4,6 +4,7 @@
 - [Day 3](#day-3)
 - [Day 4 Data_ingestion and Data_Validation](#day-4)
 - [Day 5 Data_transformation](#day-5-data_transformation)
+- [Day 6 Model_Training and Model_evaluation](#day-6-model_training-and-model_validation)
 
 ## Insert Data into MongoDB
 ```
@@ -144,6 +145,12 @@ and define all functions <br>
 `step4` create model_evaluation.py file and define class ModelEvaluation in it , write code for constructor and define intiate_model_evaluation function<br>
 `step5` go to main.py and write code for Model Evaluation
 `step6` Now our folder is created "saved_models" but it will be empty
+
+
+## Day 7 Model Evaluation Part 2 and Model Pusher
+Whenever we get the new data, the new model will be trained using the new data and we get the new accuracy . <br>
+if the new accuracy is better then the previous accuracy then the new model will be deployed and if new accuracy is less then the previous accuracy then previous model will be deployed <br>
+
 
 
 
