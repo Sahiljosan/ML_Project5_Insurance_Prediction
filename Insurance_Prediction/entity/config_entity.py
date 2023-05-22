@@ -4,6 +4,7 @@ from Insurance_Prediction.exception import InsuranceException
 from datetime import datetime
 
 
+
 FILE_NAME = "insurance.csv"
 TRAIN_FILE_NAME = "train.csv"
 TEST_FILE_NAME = "test.csv"
@@ -78,4 +79,20 @@ class ModelTrainingConfig:
 class ModelEvaluationConfig:
     def __init__(self, training_pipeline_config:TrainingPipelineConfig):
         self.change_threshold = 0.01
+
+
+# Model Pusher
+class ModelPusherConfig:
+    def __init__(self, training_pipeline_config:TrainingPipelineConfig):
+        self.model_pusher_dir = os.path.join(training_pipeline_config.artifact_dir, "model_pusher_file")
+        self.saved_model_dir = os.path.join("saved_models")
+        self.pusher_model_dir = os.path.join(self.model_pusher_dir,"saved_models")
+        self.pusher_model_path = os.path.join(self.pusher_model_dir, MODEL_FILE_NAME)
+        self.pusher_transformer_path = os.path.join(self.pusher_model_dir, TRANSFORMER_OBJECT_FILE_NAME)
+        self.pusher_target_encode_path = os.path.join(self.pusher_model_dir, TARGET_ENCODER_OBJECT_FILE_NAME)
+
+        
+
+
+      
 

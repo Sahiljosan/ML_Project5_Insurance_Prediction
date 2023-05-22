@@ -151,6 +151,17 @@ and define all functions <br>
 Whenever we get the new data, the new model will be trained using the new data and we get the new accuracy . <br>
 if the new accuracy is better then the previous accuracy then the new model will be deployed and if new accuracy is less then the previous accuracy then previous model will be deployed <br>
 
+`step1` go to model_evaluation.py and write code from **Find location of previous model** to **return model_eval_artifact** <br>
+`step2` create file model_pusher.py <br>
+`step3` go to config_entity.py and write code for class **ModelPusherConfig** <br>
+`step4` go to artifact_entity.py and write code for class **ModelPusherArtifact** <br>
+`step5` go to Insurance_Prediction/components/model_pusher.py  and write code for class **ModelPusher** <br> 
+Create constructor in class and define **initiate_model_pusher** function
+`step6` go to main.py file and write code for model pusher
+
+
+
+
 
 
 

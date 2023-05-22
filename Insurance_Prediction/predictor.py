@@ -42,7 +42,7 @@ class ModelResolver:
                 return None
             
 
-            dir_name = list(map(int, ))
+            dir_name = list(map(int, dir_name))
             latest_dir_name = max(dir_name)
             return os.path.join(self.model_registry, f"{latest_dir_name}")
 
@@ -111,16 +111,16 @@ class ModelResolver:
         except Exception as e:
             raise InsuranceException(e,sys)
         
-    
+# 6    
     def get_latest_save_model_path(self):
         try:
-            latest_dir = self.get_latest_save_model_path()
+            latest_dir = self.get_latest_save_dir_path()
             return os.path.join(latest_dir, self.model_dir_name, MODEL_FILE_NAME) # This will save in pkl file format
 
         except Exception as e:
             raise InsuranceException(e,sys)
         
-
+# 7
     def get_latest_save_transform_path(self):
         try:
             latest_dir = self.get_latest_save_dir_path()
@@ -130,7 +130,7 @@ class ModelResolver:
         except Exception as e:
             raise InsuranceException(e,sys)
         
-    
+# 8   
     def get_latest_save_target_encoder_path(self):
         try:
             latest_dir = self.get_latest_save_dir_path()
