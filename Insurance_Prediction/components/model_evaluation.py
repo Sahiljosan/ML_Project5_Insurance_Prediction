@@ -70,6 +70,9 @@ class ModelEvaluation:
 
             y_true = target_df
 
+            """
+            we need to create label encoder object for each categorical variable. we will check later
+            """
             input_features_name = list(transformer.feature_names_in)
             for i in input_features_name:
                 if test_df[i].dtypes == "O":

@@ -5,6 +5,8 @@
 - [Day 4 Data_ingestion and Data_Validation](#day-4)
 - [Day 5 Data_transformation](#day-5-data_transformation)
 - [Day 6 Model_Training and Model_evaluation](#day-6-model_training-and-model_validation)
+- [Day 7 Model Evaluation Part 2 and model pusher](#day-7-model-evaluation-part-2-and-model-pusher)
+- [Day 8 Batch Prediction, Training Pipeline, and Web Application](#day-8-batch-prediction-training-pipeline-and-web-application)
 
 ## Insert Data into MongoDB
 ```
@@ -158,6 +160,13 @@ if the new accuracy is better then the previous accuracy then the new model will
 `step5` go to Insurance_Prediction/components/model_pusher.py  and write code for class **ModelPusher** <br> 
 Create constructor in class and define **initiate_model_pusher** function
 `step6` go to main.py file and write code for model pusher
+
+## Day 8 Batch Prediction, Training Pipeline, and Web Application
+`step1` Go to Insurance_Prediction/pipeline and create folder Batch Prediction <br>
+and define **start_batch_prediction**
+`step2` Create demo.py file to check the batch_prediction.py
+
+
 
 
 

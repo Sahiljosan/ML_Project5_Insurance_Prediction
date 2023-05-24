@@ -29,6 +29,15 @@ class DataValidation:
 
 
     def drop_missing_values_columns(self, df:pd.DataFrame, report_key_name:str)->Optional[pd.DataFrame]:
+         
+        """
+        This function will drop column which contains missing value more than specified threshold
+
+        df: Accepts a pandas dataframe
+        threshold: Percentage criteria to drop a column
+        =====================================================================================
+        returns Pandas DataFrame if atleast a single column is available after missing columns drop else None
+        """
         
         try:
             threshold = self.data_validation_config.missing_threshold
