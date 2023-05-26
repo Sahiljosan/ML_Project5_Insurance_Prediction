@@ -75,7 +75,7 @@ class ModelResolver:
          try:
             latest_dir = self.get_latest_dir_path()
             if latest_dir is None:
-                raise Exception(f"Transform data is not available")
+                raise Exception(f"Transformer is not available")
             
             return os.path.join(latest_dir, self.transformer_dir_name, TRANSFORMER_OBJECT_FILE_NAME)
 

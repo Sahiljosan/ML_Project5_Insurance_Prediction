@@ -51,48 +51,59 @@ class ModelEvaluation:
                 return model_eval_artifact
             
             # Find location of previous model
+            logging.info("Finding location of transformer model and target encoder")
             transformer_path = self.model_resolver.get_latest_transformer_path()
             model_path = self.model_resolver.get_latest_model_path()
             target_encoder_path = self.model_resolver.get_latest_target_encoder_path()
 
             # All this we are defining for previous model
+            logging.info("Previous trained objects of transformer, model and target encoder")
             transformer = load_object(file_path = transformer_path)
             model = load_object(file_path = model_path)
             target_encoder = load_object(file_path = target_encoder_path)
 
             # defining for New model
+            logging.info("Currently trained model objects")
             current_transformer = load_object(file_path=self.data_transformation_artifact.transform_object_path)
             current_model = load_object(file_path=self.model_trainer_artifact.model_path)
             current_target_encoder = load_object(file_path=self.data_transformation_artifact.target_encoder_path)
 
+            # take test data for testing test data
             test_df = pd.read_csv(self.data_ingestion_artifact.test_file_path)
             target_df = test_df[TARGET_COLUMN]
 
             y_true = target_df
 
+            # target_encoder.transform(target_df)
+            # accuracy using previous trained model
+
             """
             we need to create label encoder object for each categorical variable. we will check later
             """
-            input_features_name = list(transformer.feature_names_in)
+            input_features_name = list(transformer.feature_names_in_)
             for i in input_features_name:
                 if test_df[i].dtypes == "O":
                     test_df[i] = target_encoder.fit_transform(test_df[i])
 
             input_arr = transformer.transform(test_df[input_features_name])
             y_pred = model.predict(input_arr)
+            print(f"Prediction using previouss model: {y_pred[:5]}")
 
             # comparision b/w new model and old model
 
             previous_model_score = r2_score(y_true=y_true, y_pred= y_pred)
+            logging.info(f"Accuracy using previous trained model: {previous_model_score}")
 
             # Accuracy of current model
 
-            input_features_name = list(current_transformer.feature_names_in)
+            input_features_name = list(current_transformer.feature_names_in_)
             input_arr = current_transformer.transform(test_df[input_features_name])
             y_pred = current_model.predict(input_arr)
             y_true = target_df
+            print(f"Prediction using trained model: {y_pred[:5]}")
 
             current_model_score = r2_score(y_true= y_true, y_pred= y_pred)
+            logging.info(f"Accuracy using current trained model : {current_model_score}")
 
             # Final comparision between accurcy of both models
             if current_model_score < previous_model_score:
@@ -103,6 +114,7 @@ class ModelEvaluation:
             model_eval_artifact = artifact_entity.ModelEvaluationArtifact(is_model_accepted= True,
                                                                           improved_accuracy=current_model_score - previous_model_score)
             
+            logging.info(f"Model eval artifact : {model_eval_artifact}")
             return model_eval_artifact
 
 

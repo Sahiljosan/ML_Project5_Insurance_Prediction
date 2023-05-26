@@ -7,6 +7,7 @@
 - [Day 6 Model_Training and Model_evaluation](#day-6-model_training-and-model_validation)
 - [Day 7 Model Evaluation Part 2 and model pusher](#day-7-model-evaluation-part-2-and-model-pusher)
 - [Day 8 Batch Prediction, Training Pipeline, and Web Application](#day-8-batch-prediction-training-pipeline-and-web-application)
+- [Streamlit Web app](#create-streamlit-web-app)
 
 ## Insert Data into MongoDB
 ```
@@ -162,9 +163,36 @@ Create constructor in class and define **initiate_model_pusher** function
 `step6` go to main.py file and write code for model pusher
 
 ## Day 8 Batch Prediction, Training Pipeline, and Web Application
-`step1` Go to Insurance_Prediction/pipeline and create folder Batch Prediction <br>
+`step1` Go to Insurance_Prediction/pipeline and create file Batch Prediction <br>
 and define **start_batch_prediction**
-`step2` Create demo.py file to check the batch_prediction.py
+`step2` Create demo.py file to check the batch_prediction.py <br>
+After running python demo.py , we will get a prediction folder where the output of batch prediction.py is available <br>
+`step3` 
+all functions that we have defined in component folder, we will define it in training_pipeline.py <br>
+Because when the user will come, and run the training_pipeline.py file then everything data_ingestion, data_validation, data_transformation , model_trainer, model_evaluation will be done <br>
+and then the user will do batch_prediction <br>
+`step4` Now in Insurance_Prediction/pipeline folder create file traning_pipeline.py and define function <br>
+define functions for data_ingestion, data_validation, data_transformation , model_trainer, model_evaluation, model_pusher
+
+## Create Streamlit web app
+`step1` create app.py file <br>
+Write code 
+```
+import streamlit as st
+st.title("Insurance Premium Prediction")
+```
+<br>
+To check the streamlit is working or not , write 
+```
+streamlit run app.py
+```
+<bt>
+- To create web application we need pickle file, which is available in Insurance_Prediction/saved_model.py
+- In industry we use model registry, which is available in any cloud platform and from there we are fetching the pickle file
+- Bt now we are working in local system, we will copy model.pkl , target_encoder.pkl and transformer.pkl file from saved_models and paste it in main ouput folder, near main.py and setup.py <br>
+
+`step2` Now we will load model.pkl , target_encoder.pkl and transformer.pkl one by one in app.py
+
 
 
 

@@ -29,23 +29,23 @@ def start_batch_prediction(input_file_path):
         input_features_names = list(transformer.feature_names_in_)
         # inport categorical data in our input_features
         for i in input_features_names:
-            if df[i].dtypes == "O":
+            if df[i].dtypes == "object":
                 df[i] = target_encoder.fit_transform(df[i])
         
         input_arr = transformer.transform(df[input_features_names])
 
-        model = load_object(file_path = model_resolver.get_latest_dir_path())
+        model = load_object(file_path = model_resolver.get_latest_model_path())
         prediction = model.predict(input_arr)
 
         df['prediction'] = prediction
 
         prediction_file_name = os.path.basename(input_file_path).replace(".csv",f"{datetime.now().strftime('%m%d%Y__%H%M%S')}.csv") # replace data with .csv format and the file that create will be with current date and time
 
-        prediction_file_name = os.path.join(PREDICTION_DIR, prediction_file_name)
+        prediction_file_path = os.path.join(PREDICTION_DIR, prediction_file_name)
 
-        df.to_csv(prediction_file_name, index = False, header = True) # load csv with index = False and header = True
+        df.to_csv(prediction_file_path, index = False, header = True) # load csv with index = False and header = True
 
-        return prediction_file_name
+        return prediction_file_path
 
     except Exception as e:
         raise InsuranceException(e,sys)
