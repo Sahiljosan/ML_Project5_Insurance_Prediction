@@ -77,7 +77,10 @@ Define MONGO_CLIENT in Insurance_prediction/config.py file
 ## Day 3
 After logger and Exception handling , we will fetch data from mongoDB <br>
 `step1` go to utils and write code <br>
-`Step2` Create one file .env and store mongoDB client. <br>
+`Step2` Create one file .env and assign MONGO_DB_URL. <br>
+```
+MONGO_DB_URL = "mongodb+srv://sahil_josan:samongodbhil5@cluster0.sptya9h.mongodb.net/?retryWrites=true&w=majority"
+```
 `step3` go to Insurance_Prediction.config.py file <br>
 In order to read data from mongoDB, we will define our client in mongoDB from where we are going to fetch the data.<br>
 `step4` Write code in main.py <br>
