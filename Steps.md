@@ -71,6 +71,8 @@ def get_collection_as_dataframe(database_name:str, collection_name:str)->pd.Data
 ```
 <br>
 Write code in setup.py file
+<br>
+Define MONGO_CLIENT in Insurance_prediction/config.py file
 
 ## Day 3
 After logger and Exception handling , we will fetch data from mongoDB <br>
