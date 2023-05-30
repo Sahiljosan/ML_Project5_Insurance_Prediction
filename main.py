@@ -23,6 +23,12 @@ from Insurance_Prediction.components.model_pusher import ModelPusher
     #     logging.debug(str(e))
     #     raise InsuranceException(e, sys)
     
+# if __name__ == "__main__":
+#     try:
+#         test_logger_and_exception()
+#     except Exception as e:
+#         print(e)
+    
 
 if __name__ == "__main__":
     try:
