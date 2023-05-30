@@ -105,7 +105,7 @@ if __name__ == "__main__":
         print(e)
 ```
 
-`step5` install all libraries using pip install -r requirements.txt <br>
+`step5` install all libraries using pip install -r requirements.txt (copy paste) <br> 
 `step6` Run python main.py file <br>
 After this all data will be ingested from mongoDB server <br>
 `Step7` Create 2 folders in Insurance_Prediction/entity : artifact_enity.py and config_entity.py <br>
