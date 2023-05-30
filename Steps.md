@@ -39,7 +39,7 @@ if __name__ == "__main__":
 ```
 
 ## Get data from mongoDB
-# In utils.py write below code to fetch data from mongoDB
+In utils.py write below code to fetch data from mongoDB
 ```
 import pandas as pd
 import numpy as np
