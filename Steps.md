@@ -10,6 +10,7 @@
 - [Streamlit Web app](#create-streamlit-web-app)
 
 ## Insert Data into MongoDB
+Create file data_dumo.py and write below code
 ```
 import pymongo 
 import pandas as pd
