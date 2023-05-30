@@ -95,6 +95,16 @@ load_dotenv()
 
 In order to read data from mongoDB, we will define our client in mongoDB from where we are going to fetch the data.<br>
 `step4` Write code in main.py <br>
+
+```
+if __name__ == "__main__":
+    try:
+        get_collection_as_dataframe(database_name= "INSURANCE", collection_name = "INSURANCE_PROJECT")
+
+    except Exception as e:
+        print(e)
+```
+
 `step5` install all libraries using pip install -r requirements.txt <br>
 `step6` Run python main.py file <br>
 After this all data will be ingested from mongoDB server <br>
