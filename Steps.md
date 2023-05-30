@@ -76,17 +76,17 @@ Define MONGO_CLIENT in Insurance_prediction/config.py file
 
 ## Day 3
 After logger and Exception handling , we will fetch data from mongoDB <br>
-`step1` go to utils and write code
-`Step2` Create one file .env and store mongoDB client.
+`step1` go to utils and write code <br>
+`Step2` Create one file .env and store mongoDB client. <br>
 `step3` go to Insurance_Prediction.config.py file <br>
-In order to read data from mongoDB, we will define our client in mongoDB from where we are going to fetch the data.
-`step4` Write code in main.py 
-`step5` install all libraries using pip install -r requirements.txt
+In order to read data from mongoDB, we will define our client in mongoDB from where we are going to fetch the data.<br>
+`step4` Write code in main.py <br>
+`step5` install all libraries using pip install -r requirements.txt <br>
 `step6` Run python main.py file <br>
-After this all data will be ingested from mongoDB server
+After this all data will be ingested from mongoDB server <br>
 `Step7` Create 2 folders in Insurance_Prediction/entity : artifact_enity.py and config_entity.py <br>
-Now we will write code in config.py file
-`step7` Now we will make one folder of **data_set** name, where we will split data into train data and split data
+Now we will write code in config.py file <br>
+`step7` Now we will make one folder of **data_set** name, where we will split data into train data and split data <br>
 
 ## Day 4 
 `step1` Create file data_ingestion.py in Insurance_Prediction/components folder <br>
