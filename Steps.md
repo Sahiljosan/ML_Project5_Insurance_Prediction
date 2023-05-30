@@ -10,7 +10,7 @@
 - [Streamlit Web app](#create-streamlit-web-app)
 
 ## Insert Data into MongoDB
-Create file data_dumo.py and write below code
+Create file data_dump.py and write below code to dump data in to mongo.DB
 ```
 import pymongo 
 import pandas as pd
@@ -39,6 +39,7 @@ if __name__ == "__main__":
 ```
 
 ## Get data from mongoDB
+# In utils.py write below code to fetch data from mongoDB
 ```
 import pandas as pd
 import numpy as np
