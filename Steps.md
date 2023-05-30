@@ -82,7 +82,7 @@ After logger and Exception handling , we will fetch data from mongoDB <br>
 MONGO_DB_URL = "mongodb+srv://sahil_josan:samongodbhil5@cluster0.sptya9h.mongodb.net/?retryWrites=true&w=majority"
 ``` 
 <br>
-go to Insurance_Predcition/__init__.py file and write code
+go to Insurance_Predcition/__init__.py file and write code 
 ```
 from dotenv import load_dotenv
 print(f"Loading env variable from .env")
