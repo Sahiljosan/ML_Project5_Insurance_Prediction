@@ -90,8 +90,9 @@ from dotenv import load_dotenv
 print(f"Loading env variable from .env")
 load_dotenv()
 ```
-<br>
+
 `step3` go to Insurance_Prediction.config.py file <br>
+
 In order to read data from mongoDB, we will define our client in mongoDB from where we are going to fetch the data.<br>
 `step4` Write code in main.py <br>
 `step5` install all libraries using pip install -r requirements.txt <br>
